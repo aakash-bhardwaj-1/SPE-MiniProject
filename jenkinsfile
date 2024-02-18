@@ -44,14 +44,18 @@ pipeline {
             }
         }
 
-        stage('Build Docker Image') {
-            steps {
-                script {
-                    // Build Docker image
-                    docker.build("${DOCKER_IMAGE_NAME}", '.')
-                }
-            }
+       stage('Build Docker Image') {
+    steps {
+        script {
+            // Install buildx component if not already installed
+            sh 'docker buildx version || docker buildx install'
+            
+            // Use buildx to build the Docker image
+            sh "docker buildx build --tag ${DOCKER_IMAGE_NAME} ."
         }
+    }
+}
+
 
         stage('Push Docker Images') {
             steps {

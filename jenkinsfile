@@ -1,9 +1,9 @@
 pipeline {
     agent any
-    tools{
-    maven "mvn"
-      jdk "jdk"
-      }
+    tools {
+        maven "mvn"
+        jdk "jdk"
+    }
     environment {
         DOCKER_IMAGE_NAME = 'calculator'
         GITHUB_REPO_URL = 'https://github.com/aakash-bhardwaj-1/SPE_MINI_PROJECT.git'
@@ -18,24 +18,31 @@ pipeline {
                 }
             }
         }
-            stage('maven build'){
-                script{
-                mvnHome = tool "mvn"
-                sh "${mvnHome}/bin/mvn clean package"
+
+        stage('maven build') {
+            steps {
+                script {
+                    mvnHome = tool "mvn"
+                    sh "${mvnHome}/bin/mvn clean package"
                 }
             }
+        }
 
-            stage('maven test'){
-                   script{
+        stage('maven test') {
+            steps {
+                script {
                     sh "${mvnHome}/bin/mvn test"
-                    }
-              }
+                }
+            }
+        }
 
-            stage('maven artifacts'){
-                   script{
+        stage('maven artifacts') {
+            steps {
+                script {
                     archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
-                    }
-              }
+                }
+            }
+        }
 
         stage('Build Docker Image') {
             steps {
@@ -63,9 +70,10 @@ pipeline {
                     ansiblePlaybook(
                         playbook: 'deploy.yml',
                         inventory: 'inventory'
-                     )
+                    )
                 }
             }
         }
     }
 }
+

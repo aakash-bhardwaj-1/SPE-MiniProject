@@ -5,7 +5,7 @@ pipeline {
         jdk "jdk"
     }
     environment {
-        DOCKER_IMAGE_NAME = 'calculator'
+        DOCKER_IMAGE_NAME = 'calculator_mini'
         GITHUB_REPO_URL = 'https://github.com/aakash-bhardwaj-1/SPE-MiniProject.git'
     }
 
@@ -44,11 +44,11 @@ pipeline {
             }
         }
 
-      stage('Build Docker Image') {
+     stage('Build Docker Image') {
             steps {
                 script {
                     // Build Docker image
-                    sh 'docker build -t  mini_project_calculator .'
+                    docker.build("${DOCKER_IMAGE_NAME}", '.')
                 }
             }
         }

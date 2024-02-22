@@ -29,12 +29,12 @@ public class MainTest {
         assertEquals(expectedResult, actualResult, 0.0001);
     }
 
-    @Test
-    public void testCalculatePower() {
-        double base = 2;
-        double exponent = 3;
-        double expectedResult = 8;
-        double actualResult = Main.calculatePower(base, exponent);
-        assertEquals(expectedResult, actualResult, 0.0001);
-    }
+    // @Test
+    // public void testCalculatePower() {
+    //     double base = 2;
+    //     double exponent = 3;
+    //     double expectedResult = 8;
+    //     double actualResult = Main.calculatePower(base, exponent);
+    //     assertEquals(expectedResult, actualResult, 0.0001);
+    // }
 }

@@ -13,7 +13,7 @@ public class Main {
             System.out.println("1. Square root");
             System.out.println("2. Factorial");
             System.out.println("3. Natural logarithm");
-            System.out.println("4. Power");
+            //System.out.println("4. Power");
             System.out.println("5. Exit");
 
             System.out.print("Enter your choice: ");
@@ -35,13 +35,13 @@ public class Main {
                     number = scanner.nextDouble();
                     System.out.println("Natural logarithm of " + number + " is: " + calculateNaturalLog(number));
                     break;
-                case 4:
-                    System.out.print("Enter the base number: ");
-                    double base = scanner.nextDouble();
-                    System.out.print("Enter the exponent: ");
-                    double exponent = scanner.nextDouble();
-                    System.out.println(base + " raised to the power of " + exponent + " is: " + calculatePower(base, exponent));
-                    break;
+                // case 4:
+                //     System.out.print("Enter the base number: ");
+                //     double base = scanner.nextDouble();
+                //     System.out.print("Enter the exponent: ");
+                //     double exponent = scanner.nextDouble();
+                //     System.out.println(base + " raised to the power of " + exponent + " is: " + calculatePower(base, exponent));
+                //     break;
                 case 5:
                     System.out.println("Exiting...");
                     break;
@@ -67,7 +67,7 @@ public class Main {
         return Math.log(n);
     }
 
-    public static double calculatePower(double base, double exponent) {
-        return Math.pow(base, exponent);
-    }
+    // public static double calculatePower(double base, double exponent) {
+    //     return Math.pow(base, exponent);
+    // }
 }

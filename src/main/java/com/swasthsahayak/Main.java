@@ -9,7 +9,7 @@ public class Main {
         int choice;
 
         do {
-            System.out.println("Choose any operation:");
+            System.out.println("Choose an operation:");
             System.out.println("1. Square root");
             System.out.println("2. Factorial");
             System.out.println("3. Natural logarithm");

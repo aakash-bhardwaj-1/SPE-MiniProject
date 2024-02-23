@@ -6,7 +6,7 @@
   tasks:
     - name: Pull Docker Image
       docker_image:
-        name: "aakashbhardwaj1/calculator"
+        name: "aakashbhardwaj1/calculator_spe_mini"
         source: pull
       register: docker_pull_result
 

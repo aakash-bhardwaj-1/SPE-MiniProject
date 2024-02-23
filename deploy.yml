@@ -19,4 +19,4 @@
         name: docker
         state: started
     - name: Running container
-      shell: docker run -it -d aakashbhardwaj1/calculator_mini
+      shell: docker run -it aakashbhardwaj1/calculator_mini
